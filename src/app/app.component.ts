@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mean-first';
+  // title = 'mean-first';
+  storedPosts=[];
+
+  onPostAdded(post)
+  {
+    console.dir(post);
+    this.storedPosts.push(post);
+
+  }
 }
