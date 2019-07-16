@@ -8,22 +8,12 @@ import { Post } from '../post.model';
 })
 export class PostCreateComponent implements OnInit {
 
-  @Output() postCreated= new EventEmitter<Post>();
-  ngOnInit(){
+  @Output() postCreated = new EventEmitter<Post>();
+  ngOnInit() {
 
   }
-  // onAddPost(postInput: HTMLTextAreaElement)
-  // {
-  //   // alert("You clicked");
-  //   // console.log(postInput);
-  //   console.dir(postInput);
-  //   // this.dummyVar='Hello lavish';
-  //   this.dummyVar=postInput.value;
-  // }
-  onAddPost(form: NgForm)
-  {
-    if(form.invalid)
-    {
+  onAddPost(form: NgForm) {
+    if (form.invalid) {
       return;
     }
     const post: Post = {
