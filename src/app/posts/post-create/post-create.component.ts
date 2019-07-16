@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Post } from '../post.model';
 @Component({
   selector: 'app-post-create',
@@ -7,10 +8,10 @@ import { Post } from '../post.model';
 })
 export class PostCreateComponent implements OnInit {
 
-  enteredTitle=''
-  enteredContent=''
   @Output() postCreated= new EventEmitter<Post>();
+  ngOnInit(){
 
+  }
   // onAddPost(postInput: HTMLTextAreaElement)
   // {
   //   // alert("You clicked");
@@ -19,11 +20,15 @@ export class PostCreateComponent implements OnInit {
   //   // this.dummyVar='Hello lavish';
   //   this.dummyVar=postInput.value;
   // }
-  onAddPost()
+  onAddPost(form: NgForm)
   {
+    if(form.invalid)
+    {
+      return;
+    }
     const post: Post = {
-      title: this.enteredTitle,
-      content: this.enteredContent
+      title: form.value.title,
+      content: form.value.content
     };
     this.postCreated.emit(post);
   }
