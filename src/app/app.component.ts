@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Post } from './posts/post.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +7,4 @@ import { Post } from './posts/post.model';
 export class AppComponent {
   // title = 'mean-first';
   // storedPosts=[];
-      storedPosts: Post[] = [];
-  onPostAdded(post)
-  {
-    console.dir(post);
-    this.storedPosts.push(post);
-
-  }
 }

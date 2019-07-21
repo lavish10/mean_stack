@@ -2,11 +2,11 @@
 <h2>post-create starts!</h2>
 <form (submit)="onAddPost(postForm)" #postForm="ngForm">
   <mat-form-field>
-      <input matInput type="text" ngModel name="title" #title="ngModel" required>
+      <input matInput type="text" ngModel name="title" #title="ngModel" placeholder="Post Title" required>
       <mat-error *ngIf="title.invalid">Please enter title</mat-error>
   </mat-form-field>
   <mat-form-field>
-      <textarea matInput rows="6" ngModel name="content" #content="ngModel" required></textarea>
+      <textarea matInput rows="6" ngModel name="content" #content="ngModel" placeholder="Post Content" required></textarea>
       <mat-error *ngIf="content.invalid">Please enter title</mat-error>
   </mat-form-field>
   <hr>
