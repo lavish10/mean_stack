@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 })
 
 app.use("/api/posts", postsRouter);
+app.use("/images", express.static(path.join("backend/images")))
 
 module.exports = app;
 //usernamce= lavish
